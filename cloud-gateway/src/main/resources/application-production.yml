@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: client
+          uri: lb://client-microservice
+          predicates:
+            - Path=/clients/**
+        - id: card
+          uri: lb://card-microservice
+          predicates:
+            - Path=/cards/**
+        - id: credit-evaluator
+          uri: lb://credit-evaluator-ms
+          predicates:
+            - Path=/credit-evaluator/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://${KEYCLOAK_SERVER}:${KEYCLOAK_PORT}/realms/credit-evaluator-microservices
+
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-user:eureka-password@${EUREKA_SERVER}:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: localhost
+
+server:
+  port: 8080

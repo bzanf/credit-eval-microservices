@@ -2,10 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/card-microservice" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/client-microservice" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cloud-gateway" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/credit-evaluator-ms" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/eureka-server" vcs="Git" />
   </component>
 </project>
